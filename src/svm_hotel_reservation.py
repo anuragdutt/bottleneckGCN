@@ -9,7 +9,7 @@ from joblib import dump, load
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from joblib import dump, load
-
+from sklearn.metrics import f1_score, accuracy_score
 
 def meanNorm(X):
 	dfx = []
@@ -105,8 +105,8 @@ if __name__ == "__main__":
 	for i in range(epochs):
 		train(X_train.to_numpy(), y_train.to_numpy(), nclasses, batchsize)
 		dump(model, model_path)
-		score = model.score(X_test, y_test)
 		
 	y_pred = model.predict(X_test)
 
-	print(score)
+	print(f1_score(y_pred, y_test))
+	print(accuracy_score(y_pred, y_test))
