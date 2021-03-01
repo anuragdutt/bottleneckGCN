@@ -75,7 +75,7 @@ if __name__ == "__main__":
 	model = ""
 	nclasses = 6
 	batchsize = 256
-	epochs = 20
+	epochs = 100
 	model_path = "../models/svm.checkpoint"
 	n0 = pd.read_csv("../data/tracing-data/hotel-reservation/0_frontend.csv")
 	n0['label'] = 0
